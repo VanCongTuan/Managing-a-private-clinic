@@ -1,0 +1,53 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Về bác sĩ chúng tôi{% endblock %}
+{% block css %}
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="static/css/normalize.css" rel="stylesheet" />
+{% endblock %}
+{% block js %}
+  <script src = "static/js/script.js"></script>
+{% endblock %}
+{% block content %}
+   <!-- doctors section -->
+        <section id = "doc-panel" class = "doc-panel py">
+            <div class = "container">
+                <div class = "section-head">
+                    <h2>Our Doctor Panel</h2>
+                </div>
+
+                <div class = "doc-panel-inner grid">
+                    <div class = "doc-panel-item">
+                        <div class = "img flex">
+                            <img src = "static/image/doc-1.png" alt = "doctor image">
+                            <div class = "info text-center bg-blue text-white flex">
+                                <p class = "lead">Trần Tuấn Kiệt</p>
+                                <p class = "text-lg">Bác sĩ nội trú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "doc-panel-item">
+                        <div class = "img flex">
+                            <img src = "static/image/doc-2.png" alt = "doctor image">
+                            <div class = "info text-center bg-blue text-white flex">
+                                <p class = "lead">La Hồng Lộc</p>
+                                <p class = "text-lg">Bác sĩ ngoại trú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "doc-panel-item">
+                        <div class = "img flex">
+                            <img src = "static/image/doc-3.png" alt = "doctor image">
+                            <div class = "info text-center bg-blue text-white flex">
+                                <p class = "lead">Trân Lê Lân</p>
+                                <p class = "text-lg">Bác sĩ chuyên về thuốc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of doctors section -->
+{% endblock %}

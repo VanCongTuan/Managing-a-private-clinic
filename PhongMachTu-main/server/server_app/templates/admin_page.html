@@ -1,0 +1,58 @@
+
+{% extends 'admin/base.html' %}
+
+{% block body %}
+{% if current_user.is_authenticated %}
+
+    <table class="table">
+    <tr>
+        <th>Ma Hoa Don</th>
+        <th>Tien kham</th>
+         <th>Tien Thuoc</th>
+         <th>Tong Tien</th>
+         <th>Ngay Kham</th>
+        <th>ThuNgan</th>
+        <th>PhieuKham</th>
+    </tr>
+    {% for hd in stats %}
+    <tr>
+        <th>{{ hd[0] }}</th>
+        <th>{{ hd[1] }}</th>
+         <th>{{ hd[2] }}</th>
+         <th>{{ hd[3] }}</th>
+         <th>{{ hd[4] }}</th>
+        <th>{{ hd[5] }}</th>
+        <th>{{ hd[6] }}</th>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
+
+</div>
+
+{% else %}
+    <div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-80">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Dang nhap nguoi dung quan tri</h2>
+        <form method="post" action="{{url_for('login_admin')}}">
+            <div class="mb-4">
+                <label for="usernameAd" class="block text-gray-700 text-sm font-bold mb-2">Tên đăng nhập</label>
+                <input type="text" id="usernameAd" name="usernameAd" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:border-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="passwordAd" class="block text-gray-700 text-sm font-bold mb-2">Mật khẩu</label>
+                <input type="password" id="passwordAd" name="passwordAd" class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:border-blue-500" required>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" value="Đăng nhập" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Đăng nhập</button>
+            </div>
+        </form>
+          </div>
+        </div>
+
+
+{%endif%}
+
+{%endblock%}
+

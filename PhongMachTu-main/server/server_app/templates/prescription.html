@@ -1,0 +1,53 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Tra cứu thuốc{% endblock %}
+
+{% block content %}
+
+<p class="text-center text-success" style="font-size: xx-large">Don thuoc</p>
+    {%if 'medicine' in session and session['medicine'] %}
+<table class="table" style="border: dashed">
+
+        <tr>
+            <th>
+                Ma san pham
+            </th>
+             <th>
+                Ten san pham
+            </th>
+            <th>
+                Don gia san pham
+            </th>
+             <th>
+                So luong
+            </th>
+            </tr>
+            {% for c in session['medicine'].values() %}
+        <tr>
+            <td>{{c.id}}</td>
+            <td>{{c.tenThuoc}}</td>
+
+        <td>{{c.donGia}}</td>
+        <td>{{c.quantity}}</td>
+
+        </tr>
+          {% endfor %}
+
+    </table>
+<div class ="alert alert-danger alert-info">
+    <h5>Tong san pham : {{stats.total_quantity}}</h5>
+    <h5>Tong Tiền san pham : {{stats.total_price}}</h5>
+</div>
+{% if current_user.is_authenticated %}
+<button class="btn btn-danger" value="lap don thuoc" onclick="pay()"> Lap don thuoc</button>
+<br>
+<br>
+{%endif%}
+            {%else%}
+            <p><i>Khong co san pham nao trong gio</i> </p>
+            {%endif %}
+
+
+
+
+{% endblock %}

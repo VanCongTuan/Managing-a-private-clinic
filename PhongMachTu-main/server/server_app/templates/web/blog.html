@@ -1,0 +1,68 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Về chúng tôi{% endblock %}
+{% block css %}
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="static/css/normalize.css" rel="stylesheet" />
+{% endblock %}
+{% block js %}
+  <script src = "static/js/script.js"></script>
+{% endblock %}
+{% block content %}
+ <!-- posts section -->
+        <section id = "posts" class = "posts py">
+            <div class = "container">
+                <div class = "section-head">
+                    <h2>Latest Post</h2>
+                </div>
+                <div class = "posts-inner grid">
+                    <article class = "post-item bg-white">
+                        <div class = "img">
+                            <img src = "static/image/post-1.jpg">
+                        </div>
+                        <div class = "content">
+                            <h4>Những câu chuyện đầy cảm hứng về việc chăm sóc con người và gia đình làm trung tâm trong thời kỳ đại dịch toàn cầu.</h4>
+                            <p class = "text text-sm">
+Bản thân công ty đã là một công ty rất thành công. Họ bị mù quáng bởi nỗi đau và niềm vui khi từ chối làm bất cứ điều gì. Bạn nợ một cái gì đó để mong muốn.</p>
+                            <p class = "text text-sm">Bản thân công ty đã là một công ty rất thành công. Đối với chúng tôi, vì chính cô ấy mới là người đúng nhưng cô ấy thì không.</p>
+                            <div class = "info flex">
+                                <small class = "text text-sm"><i class = "fas fa-clock"></i> October 27, 2023</small>
+                                <small class = "text text-sm"><i class = "fas fa-comment"></i> 10 comments</small>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class = "post-item bg-white">
+                        <div class = "img">
+                            <img src = "static/image/post-2.jpg">
+                        </div>
+                        <div class = "content">
+                            <h4>Đại dịch covid 2019 cách chăm sóc vượt qua đai dịch</h4>
+                            <p class = "text text-sm">Cảm ơn vì tôi còn sống</p>
+                            <p class = "text text-sm">Trải qua sinh lão bệnh tử thời covid mới thấy yêu cuộc đời .</p>
+                            <div class = "info flex">
+                                <small class = "text text-sm"><i class = "fas fa-clock"></i> July 19, 2023</small>
+                                <small class = "text text-sm"><i class = "fas fa-comment"></i> 28 comments</small>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class = "post-item bg-white">
+                        <div class = "img">
+                            <img src = "static/image/post-3.jpg">
+                        </div>
+                        <div class = "content">
+                            <h4>Các dịch vụ chăm sóc thiệt kỹ càng </h4>
+                            <p class = "text text-sm">Dịch vụ tốt khi được chăm sóc và điều trị tại đây</p>
+                            <p class = "text text-sm">Gặp thêm những người bạn tốt</p>
+                            <div class = "info flex">
+                                <small class = "text text-sm"><i class = "fas fa-clock"></i> October 7, 2023</small>
+                                <small class = "text text-sm"><i class = "fas fa-comment"></i> 15 comments</small>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- end of posts section -->
+{% endblock %}

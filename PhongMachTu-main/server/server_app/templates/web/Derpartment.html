@@ -1,0 +1,51 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Dịch vụ tại nhà{% endblock %}
+{% block css %}
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="static/css/normalize.css" rel="stylesheet" />
+{% endblock %}
+{% block js %}
+  <script src = "static/js/script.js"></script>
+{% endblock %}
+{% block content %}
+ <!-- package services section -->
+        <section id = "package-service" class = "package-service py text-center">
+            <div class = "container">
+                <div class = "package-service-head text-white">
+                    <h2>Dịch vụ trọn gói</h2>
+                    <p class = "text text-lg">
+Gói dịch vụ tốt nhất dành cho bạn</p>
+                </div>
+                <div class = "package-service-inner grid">
+                    <div class = "package-service-item bg-white">
+                        <div class = "icon flex">
+                            <i class = "fas fa-phone fa-2x"></i>
+                        </div>
+                        <h3>Trường hợp thường xuyên</h3>
+                        <p class = "text text-sm">Xin chào, thật sự là một nỗi đau khi phải theo dõi. Kết quả là, thô hơn. Trong sự vội vàng, bằng cách từ chối những người hạnh phúc, nhưng kết quả của niềm vui, chuyến bay này đạt được..</p>
+                        <a href = "#" class = "btn btn-blue">Read More</a>
+                    </div>
+
+                    <div class = "package-service-item bg-white">
+                        <div class = "icon flex">
+                            <i class = "fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <h3>Vụ án nghiêm trọng</h3>
+                        <p class = "text text-sm"> Xin chào, thật sự là một nỗi đau khi phải theo dõi. Kết quả là, thô hơn. Trong sự vội vàng, bằng cách từ chối những người hạnh phúc, nhưng kết quả của niềm vui, chuyến bay này đạt được.</p>
+                        <a href = "#" class = "btn btn-blue">Read More</a>
+                    </div>
+
+                    <div class = "package-service-item bg-white">
+                        <div class = "icon flex">
+                            <i class = "fas fa-comments fa-2x"></i>
+                        </div>
+                        <h3>Trường hợp khẩn cấp</h3>
+                        <p class = "text text-sm">Xin chào, thật sự là một nỗi đau khi phải theo dõi. Kết quả là, thô hơn. Trong sự vội vàng, bằng cách từ chối những người hạnh phúc, nhưng kết quả của niềm vui, chuyến bay này đạt được.</p>
+                        <a href = "#" class = "btn btn-blue">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of package services section -->
+{% endblock %}

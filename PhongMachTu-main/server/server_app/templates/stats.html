@@ -1,0 +1,108 @@
+{% extends '/admin/base.html' %}
+
+{% block body %}
+    <h1 class="text-center text-danger" > Thống kê doanh thu</h1>
+<div class="row">
+<div class="col-md-5 col-xs-12">
+ <table border="1">
+        <tr>
+            <th>Ngày thu tiền</th>
+            <th>Doanh thu</th>
+            <th>Số bệnh nhân</th>
+            <th>Tỷ lệ (%)</th>
+        </tr>
+        {% for row in sales_data %}
+            <tr>
+                <td>{{ row.Ngay_thu_tien }}</td>
+                <td>{{ row.Doanh_thu }} VND</td>
+                <td>{{ row.benh_nhan }}</td>
+                <td>{{ row.ty_le }} %</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="col-md-5 col-xs-12">
+    <form >
+        <div class="form-group">
+            <div><input type=" text" class="form-control" name="kw" placeholder="Nhap tu thang"></div>
+            <div><input type="date" class="form-control" name="from_date"/></div>
+            <div><input type="date" class="form-control" name="to_date"/></div>
+            <input type="submit" value="Thong ke thang" class="btn btn-success ">
+        </div>
+    </form>
+      <canvas id="sale_report" style="background-size: 30%"></canvas>
+</div>
+
+    </div>
+    <div class="row">
+    <div class="col-md-5 col-xs-12">
+
+  <canvas id="mySaleReport"></canvas>
+</div>
+<div class="col-md-5 col-xs-12">
+<div>
+    <form >
+        <div class="form-group">
+            <div><input type="text" min="2000" class="form-control" name="year"/></div>
+            <input type="submit" value="Thong ke thang" class="btn btn-success ">
+        </div>
+    </form>
+    <table class="table">
+    <tr>
+        <th>Thang</th>
+        <th>Doanh thu</th>
+    </tr>
+    {% for s in sales_datas %}
+    <tr>
+        <th>{{ s[0] }}</th>
+        <th>{{ s[1] }}</th>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let label =[]
+let data =[]
+{% for  s in sales_data %}
+    label.push('{{ s[0] }}')
+    data.push({{ s[1] }})
+{% endfor %}
+let label1 =[]
+let data1 =[]
+{% for  s in sales_datas %}
+    label1.push('{{ s[0] }}')
+    data1.push({{ s[1] }})
+{% endfor %}
+    window.onload=function (){
+        const ctx=document.getElementById('sale_report').getContext('2d')
+         const ctx1=document.getElementById('mySaleReport').getContext('2d')
+        loadChart(ctx,label,data,'line')
+        loadChart(ctx1,label1,data1,'bar')
+    }
+function loadChart(ctx,label, data,type){
+
+            const  mychart=new Chart(ctx, {
+            type: type,
+            data: {
+              labels: label,
+              datasets: [{
+                label: 'Thong ke doanh thu',
+                data: data,
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+}
+</script>
+{% endblock %}

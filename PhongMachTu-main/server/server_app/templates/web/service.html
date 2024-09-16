@@ -1,0 +1,78 @@
+ {% extends 'layout/base.html' %}
+
+{% block title %}Dịch vụ{% endblock %}
+{% block css %}
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="static/css/normalize.css" rel="stylesheet" />
+{% endblock %}
+{% block js %}
+  <script src = "static/js/script.js"></script>
+{% endblock %}
+{% block content %}
+
+<!-- services section -->
+        <section id = "services" class = "services py">
+            <div class = "container">
+                <div class = "section-head text-center">
+                    <h2 class = "lead">Bác sĩ giỏi nhất cho ít thuốc nhất</h2>
+                    <p class = "text text-lg">Một cách hoàn hảo để giới thiệu các dịch vụ bệnh viện của bạn</p>
+                    <div class = "line-art flex">
+                        <div></div>
+                        <img src = "static/image/4-dots.png">
+                        <div></div>
+                    </div>
+                </div>
+                <div class = "services-inner text-center grid">
+                    <article class = "service-item">
+                        <div class = "icon">
+                            <img src = "static/image/service-icon-1.png">
+                        </div>
+                        <h3>Theo dõi tim mạch</h3>
+                        <p class = "text text-sm">Theo Dõi Liên Tục: Công nghệ theo dõi nhịp tim mạch giúp bạn theo dõi hoạt động tim mạch của mình liên tục, cung cấp thông tin chi tiết về sự thay đổi trong mọi hoàn cảnh.</p>
+                    </article>
+
+                    <article class = "service-item">
+                        <div class = "icon">
+                            <img src = "static/image/service-icon-2.png">
+                        </div>
+                        <h3>Điều trị y tế</h3>
+                        <p class = "text text-sm">"Điều trị y tế là quá trình chăm sóc và can thiệp để cải thiện sức khỏe và giảm bớt triệu chứng của bệnh nhân."</p>
+                    </article>
+
+                    <article class = "service-item">
+                        <div class = "icon">
+                            <img src = "static/image/service-icon-3.png">
+                        </div>
+                        <h3>Cứu khẩn cấp</h3>
+                        <p class = "text text-sm">Cứu khẩn cấp là quá trình cung cấp chăm sóc ngay lập tức để giữ cho người bệnh ổn định và cứu sống trong tình huống khẩn cấp. Đội ngũ cứu thương đào tạo chuyên nghiệp đảm bảo phản ứng nhanh chóng và hiệu quả. Sự nhanh nhẹn và kỹ năng của họ đóng vai trò quan trọng trong việc cung cấp sự giúp đỡ khi mọi giây đều quan trọng</p>
+                    </article>
+
+                    <article class = "service-item">
+                        <div class = "icon">
+                            <img src = "static/image/service-icon-4.png">
+                        </div>
+                        <h3>Sơ cứu </h3>
+                        <p class = "text text-sm">Sơ cứu là những biện pháp ngay lập tức được thực hiện để cung cấp chăm sóc cấp thiết khi có sự cấp cứu y tế. Bạn có thể áp dụng kỹ thuật như thở nhân tạo, áp dụng bó bột, kiểm tra nhịp tim để duy trì sự ổn định cho người bệnh. Việc nắm vững kỹ năng sơ cứu là quan trọng để đáp ứng nhanh chóng trong tình huống khẩn cấp và giữ cho tình trạng sức khỏe ổn định cho đến khi đội cứu thương đến</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- end of services section -->
+
+        <!-- banner two section -->
+        <section id = "banner-two" class = "banner-two text-center">
+            <div class = "container grid">
+                <div class = "banner-two-left">
+                    <img src = "static/image/banner-2-img.png">
+                </div>
+                <div class = "banner-two-right">
+                    <p class = "lead text-white">When you are young and healthy, it never occurs to you that in a single second your whole life could change.</p>
+                    <div class = "btn-group">
+                        <a href = "#" class = "btn btn-white">Learn More</a>
+                        <a href = "#" class = "btn btn-light-blue">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of banner two section -->
+{% endblock %}

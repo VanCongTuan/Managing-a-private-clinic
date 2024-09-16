@@ -1,0 +1,52 @@
+
+{% extends 'layout/base.html' %}
+
+{% block title %}Về chúng tôi{% endblock %}
+{% block css %}
+    <link href="static/css/main.css" rel="stylesheet" />
+    <link href="static/css/normalize.css" rel="stylesheet" />
+{% endblock %}
+{% block js %}
+  <script src = "static/js/script.js"></script>
+{% endblock %}
+{% block content %}
+
+  <!-- about section -->
+        <section id = "about" class = "about py">
+            <div class = "about-inner">
+                <div class = "container grid">
+                    <div class = "about-left text-center">
+                        <div class = "section-head">
+                            <h2>About Us</h2>
+                            <div class = "border-line"></div>
+                        </div>
+                        <p class = "text text-lg">Chào mừng bạn đến với Phòng Mạch Tư, nơi mà chăm sóc sức khỏe được đặt lên hàng đầu và sự an tâm của bệnh nhân là ưu tiên hàng đầu của chúng tôi. Tọa lạc trong một môi trường thoải mái và thân thiện, chúng tôi cam kết mang đến cho mọi người trải nghiệm y tế chất lượng và chu đáo.
+
+Tại Phòng Mạch Tư, đội ngũ y bác sĩ và nhân viên y tế của chúng tôi không chỉ là những chuyên gia hàng đầu trong lĩnh vực y tế, mà còn là những người đồng hành đáng tin cậy trên con đường chăm sóc sức khỏe của bạn. Chúng tôi tự hào về sự hiện đại và tiện nghi của phòng mạch, nơi mà mọi dịch vụ y tế đều được cung cấp một cách chuyên nghiệp và hiệu quả.
+
+Chất lượng không chỉ xuất phát từ sự chăm sóc y tế, mà còn từ không khí thân thiện và ấm cúng mỗi khi bước vào Phòng Mạch Tư. Chúng tôi cam kết tạo ra một không gian tận tâm, nơi mà bạn không chỉ là bệnh nhân mà còn là một phần của gia đình y tế chúng tôi.
+
+Hãy để Phòng Mạch Tư là điểm đến đáng tin cậy của bạn, nơi bạn có thể yên tâm đặt niềm tin vào sự chuyên nghiệp và tận tâm của đội ngũ y tế chúng tôi, và nơi mà sức khỏe của bạn được quan tâm hàng đầu.</p>
+                        <a href = "#" class = "btn btn-white">Learn More</a>
+                    </div>
+                    <div class = "about-right flex">
+                        <div class = "img">
+                            <img src = "static/image/about-img.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of about section -->
+
+        <!-- banner one -->
+        <section id = "banner-one" class = "banner-one text-center">
+            <div class = "container text-white">
+                <blockquote class = "lead"><i class = "fas fa-quote-left"></i> Khi bạn còn trẻ và khỏe mạnh, bạn sẽ không bao giờ nghĩ rằng chỉ trong một giây mà cả cuộc đời bạn có thể thay đổi. <i class = "fas fa-quote-right"></i></blockquote>
+                <small class = "text text-sm">- Anonim Nano</small>
+            </div>
+        </section>
+        <!-- end of banner one -->
+
+
+{% endblock %}

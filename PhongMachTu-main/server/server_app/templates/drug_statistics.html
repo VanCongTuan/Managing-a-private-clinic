@@ -1,0 +1,118 @@
+{% extends '/admin/base.html' %}
+
+{% block body %}
+    <h1 class="text-center text-danger" > Thống kê thuoc</h1>
+<div class="row">
+ <table border="1" style="text-align: center" >
+        <tr>
+            <th>Tên thuốc</th>
+            <th>Don vi</th>
+            <th>Số luong</th>
+            <th>So lan dung</th>
+        </tr>
+        {% for row in medication_data %}
+            <tr>
+                <td>{{ row.Ten_thuoc }}</td>
+                <td>{{ row.Don_vi }} </td>
+                <td>{{ row.So_luong }}</td>
+                <td>{{ row.So_lan_dung }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form >
+        <div class="form-group">
+            <div><input type=" text" class="form-control" name="kw1" placeholder="Nhap tu khoa ...."></div>
+            <div><input type="date" class="form-control" name="fromdate"/></div>
+            <div><input type="date" class="form-control" name="todate"/></div>
+            <input type="submit" value="Thong ke thuoc" class="btn btn-success ">
+        </div>
+    </form>
+</div>
+    <div class="row">
+<div class="col-md-5 col-xs-12">
+<div class="col-md-5 col-xs-12">
+    <table class="table">
+    <tr>
+        <th>Ten thuoc</th>
+        <th>So lan</th>
+    </tr>
+    {% for s in medication_data %}
+    <tr>
+        <th>{{ s[1] }}</th>
+        <th>{{ s[0] }}</th>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
+</div>
+<div class="col-md-5 col-xs-12">
+
+      <canvas id="medication_report" style="background-size: 30%"></canvas>
+</div>
+
+    </div>
+    <div class="row">
+    <div class="col-md-5 col-xs-12">
+  <canvas id="myMedicationReport"></canvas>
+</div>
+<div class="col-md-5 col-xs-12">
+    <table class="table">
+    <tr>
+        <th>Ten thuoc</th>
+        <th>So Luong</th>
+    </tr>
+    {% for s in medication_data %}
+    <tr>
+        <th>{{ s[1] }}</th>
+        <th>{{ s[3] }}</th>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let label =[]
+let data =[]
+{% for  s in medication_data %}
+    label.push('{{ s[1] }}')
+    data.push({{ s[0] }})
+{% endfor %}
+let label1 =[]
+let data1 =[]
+{% for  s in medication_data %}
+    label1.push('{{ s[1] }}')
+    data1.push({{ s[3] }})
+{% endfor %}
+    window.onload=function (){
+        const ctx=document.getElementById('medication_report').getContext('2d')
+         const ctx1=document.getElementById('myMedicationReport').getContext('2d')
+        loadChart(ctx,label,data,'line')
+        loadChart(ctx1,label1,data1,'bar')
+    }
+function loadChart(ctx,label, data,type){
+
+            const  mychart=new Chart(ctx, {
+            type: type,
+            data: {
+              labels: label,
+              datasets: [{
+                label: 'Thong ke doanh thu',
+                data: data,
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+}
+</script>
+{% endblock %}
